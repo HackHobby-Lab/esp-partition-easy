@@ -3,6 +3,15 @@
   "displayName": "ESP-partition-easy",
   "description": "A simple extension which makes it easier for you to partition your esp partitions. Will save lot of time for sure :)",
   "version": "0.0.1",
+  "publisher": "hackhobbylab",
+  "author": {
+    "name": "Hamzah Awan",
+    "url": "https://instagram.com/hackhobbylab"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HackHobby-Lab/esp-partition-easy"
+  },
   "engines": {
     "vscode": "^1.104.0"
   },
