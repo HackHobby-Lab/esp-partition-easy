@@ -531,21 +531,42 @@ function getWebviewContent(csvText: string): string {
             }
 
             function addRow() {
-                // Find where the last partition ends to suggest an offset?
-                // Or just leave it empty for auto-calc.
+                let newOffset = '0x8000'; // Default for first partition
+                
+                if (partitions.length > 0) {
+                    const last = partitions[partitions.length - 1];
+                    const lastOffset = parseOffset(last.offset);
+                    const lastSize = parseSize(last.size);
+                    
+                    if (lastOffset !== null && lastSize > 0) {
+                        newOffset = formatHex(alignTo4K(lastOffset + lastSize));
+                    } else {
+                        // If last partition has invalid offset/size, we can't auto-calc easily.
+                        // Try to find the max end address?
+                        // For now, let's just leave it empty or try to put it after the last *valid* one?
+                        // Simplest: Just leave it empty if we can't calc, but the user wants it visualized.
+                        // Let's try to find the max end.
+                        let maxEnd = 0x8000;
+                        partitions.forEach(p => {
+                            const off = parseOffset(p.offset);
+                            const sz = parseSize(p.size);
+                            if (off !== null && sz > 0) {
+                                const end = off + sz;
+                                if (end > maxEnd) maxEnd = end;
+                            }
+                        });
+                        newOffset = formatHex(alignTo4K(maxEnd));
+                    }
+                }
+
                 partitions.push({
                     name: 'new_part',
                     type: 'data',
                     subtype: 'undefined',
-                    offset: '', // Empty = Auto
+                    offset: newOffset,
                     size: '4K',
                     flags: ''
                 });
-                
-                // Trigger recalc from the second to last partition to fill the new one
-                if (partitions.length > 1) {
-                    recalculateOffsets(partitions.length - 2);
-                }
                 
                 renderTable();
                 updateVisuals();
