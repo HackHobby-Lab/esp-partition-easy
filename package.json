@@ -3,7 +3,7 @@
   "displayName": "ESP-partition-easy",
   "description": "A simple extension which makes it easier for you to partition your esp partitions. Will save lot of time for sure :)",
   "icon": "./images/icon.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "HamzahAwan",
   "author": {
     "name": "Hamzah Awan",
