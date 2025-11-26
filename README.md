@@ -10,7 +10,7 @@
 - **Multi-Chip Support**: Compatible with **ESP32**, **ESP32-S2**, **ESP32-C3**, and **ESP32-S3**.
 - **Smart Alignment**: Automatically aligns partition offsets to boundaries to ensure compatibility.
 - **Overlap Detection**: Instantly detects and warns about overlapping partitions to prevent build errors.
-- **Dynamic Flash Sizes**: Support for various flash sizes (4MB, 8MB, 16MB, 32MB).
+- **Dynamic Flash Sizes**: Support for various flash sizes (2MB, 4MB, 8MB, 16MB, 32MB).
 - **CSV Integration**: Seamlessly reads from and writes back to your `partitions.csv` file.
 
 ## How to Use

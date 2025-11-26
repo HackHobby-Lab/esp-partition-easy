@@ -234,6 +234,24 @@ function getWebviewContent(csvText: string): string {
                 font-size: 12px;
                 display: none;
             }
+
+            footer {
+                margin-top: 40px;
+                padding-top: 20px;
+                border-top: 1px solid #333;
+                text-align: center;
+                font-size: 12px;
+                color: #888;
+            }
+
+            footer a {
+                color: var(--vscode-textLink-foreground);
+                text-decoration: none;
+            }
+
+            footer a:hover {
+                text-decoration: underline;
+            }
         </style>
     </head>
     <body>
@@ -243,6 +261,7 @@ function getWebviewContent(csvText: string): string {
             <div class="control-group">
                 <label>Flash Size</label>
                 <select id="flashSize" onchange="updateVisuals()">
+                    <option value="2097152">2 MB</option>
                     <option value="4194304">4 MB</option>
                     <option value="8388608">8 MB</option>
                     <option value="16777216">16 MB</option>
@@ -286,6 +305,11 @@ function getWebviewContent(csvText: string): string {
             <button onclick="addRow()">+ Add Partition</button>
             <button id="saveBtn">Save Changes</button>
         </div>
+
+        <footer>
+            <p>ESP Partition Easy by <strong>Hamzah Awan</strong> | <a href="https://github.com/HackHobby-Lab/esp-partition-easy">GitHub</a> | <a href="https://instagram.com/hackhobby_lab">HackHobby Lab</a></p>
+            <p><em>Made with ❤️ for the ESP32 Community</em></p>
+        </footer>
 
         <script>
             const vscode = acquireVsCodeApi();
