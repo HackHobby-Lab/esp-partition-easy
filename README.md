@@ -1,8 +1,12 @@
 # ESP Partition Easy
 
+<div align="center">
+  <img src="./images/icon.png" alt="ESP Partition Easy Logo" width="128" height="128" />
+</div>
+
 **ESP Partition Easy** is a powerful Visual Studio Code extension designed to simplify the management of partition tables for ESP32 development boards. Say goodbye to manual CSV editing and hello to a visual, intuitive interface!
 
-[[Get it on VS Code Marketplace]](https://github.com/HackHobby-Lab/esp-partition-easy)
+[![Get it on VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/HamzahAwan.esp-partition-easy?style=for-the-badge&label=VS%20Code%20Marketplace&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=HamzahAwan.esp-partition-easy)
 
 ## Features
 
